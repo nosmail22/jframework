@@ -90,6 +90,7 @@ class jf
 		if(!class_exists($controller,false))
 			throw new Exception("в файле {$controller_file} отсутствует класс {$controller}");
 		$c=new $controller($app_path,$controller_name,$action_name);
+		$c->before_action();
 		$c->$action();
 	}
 
